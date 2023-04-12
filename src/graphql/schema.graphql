@@ -1,0 +1,23 @@
+type Query {
+    eventCalendar(id: String!): Recipe
+    events(skip: Int, take: Int): [Recipe!]!
+}
+
+type Mutation {
+    event(newRecipeData: NewRecipeInput!): Recipe!
+    removeEvent(id: String!): Boolean!
+}
+
+type Recipe {
+    id: String!
+    title: String!
+    description: String
+    creationDate: String!
+    ingredients: [String!]!
+}
+
+input NewRecipeInput {
+    title: String!
+    description: String
+    ingredients: [String!]!
+}
